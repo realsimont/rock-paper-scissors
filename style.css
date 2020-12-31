@@ -13,14 +13,21 @@
     text-decoration:none;
     text-shadow:0px 1px 0px #263666;
 }
+
 .btn:hover {
     background:#0688fa;
     background-color:#0688fa;
 }
+
 .btn:active {
     position:relative;
     top:1px;
 }
+
 p {
     font-family: 'Montserrat';
+}
+
+.result {
+    font-family: 'Courier New', Courier, monospace;
 }
