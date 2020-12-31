@@ -1,3 +1,7 @@
+function refresh() {
+    location.reload();
+}
+
 let computerSelection;
 function computerSelect() {
     random = Math.floor(Math.random() * 3);
@@ -16,27 +20,32 @@ let computerScore = 0;
 let ties = 0;
 
 function playRound(humanSelection) {
-    let winOutcome = `Game ${games}: You played ${humanSelection}, Computer played ${computerSelection} - you win!`;
-    let loseOutcome = `Game ${games}: You played ${humanSelection}, Computer played ${computerSelection} - you lose!`;
+    console.log(games);
+    let humanWinOutcome = `Game ${games}: You played ${humanSelection}, Computer played ${computerSelection} - you win!`;
+    let humanLoseOutcome = `Game ${games}: You played ${humanSelection}, Computer played ${computerSelection} - you lose!`;
     let tieOutcome = `Game ${games}: You played ${humanSelection}, Computer played ${computerSelection} - it's a tie!`;
+    let finalOutcome = `That's it! Game over. After 10 games, the final score is: You ${humanScore}, Computer ${computerScore}, Ties: ${ties}.`;
     function printResult(outcome) {
         resultsArea = document.getElementById("results");
         result = document.createElement("p");
-        result.classList.add("result");
         result.innerHTML = outcome;
         resultsArea.appendChild(result);
     }
     function gameOver() {
-        finalResult = `That's it! Game over. After 10 games, the final score is: You ${humanScore}, Computer ${computerScore}, Ties: ${ties}.`;
         printResult(finalOutcome);
+        document.getElementById("rock").classList.add("disabled-btn");
+        document.getElementById("paper").classList.add("disabled-btn");
+        document.getElementById("scissors").classList.add("disabled-btn");
+        startOver = document.createElement("p");
+        startOver.innerHTML = 'Click "Start Over" to play again.';
+        resultsArea.appendChild(startOver);
     }
     if ( //human wins
         (humanSelection === "Rock" && computerSelection === "Scissors") ||
         (humanSelection === "Paper" && computerSelection === "Rock") ||
         (humanSelection === "Scissors" && computerSelection === "Paper")
         ) {
-        console.log(`Game ${games}: You played ${humanSelection}, Computer played ${computerSelection} - you win!`);
-        printResult(winOutcome);
+        printResult(humanWinOutcome);
         games++;
         humanScore++;
         if (games === 11) {
@@ -47,15 +56,13 @@ function playRound(humanSelection) {
         (computerSelection === "Paper" && humanSelection === "Rock") ||
         (computerSelection === "Scissors" && humanSelection === "Paper") 
     ) {
-        console.log(`Game ${games}: You played ${humanSelection}, Computer played ${computerSelection} - you lose!`);
-        printResult(loseOutcome);
+        printResult(humanLoseOutcome);
         games++;
         computerScore++;
         if (games === 11) {
             gameOver();
         }
     } else { //tie
-        console.log(`Game ${games}: You played ${humanSelection}, Computer played ${computerSelection} - it's a tie!`);
         printResult(tieOutcome);
         games++;
         ties++;
