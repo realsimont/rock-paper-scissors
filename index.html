@@ -2,24 +2,70 @@
 <head>
     <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body>
-    <div>
-        <a href="#" id="start-over" onclick="refresh()">Start Over</a>
-    </div>
-    <div id="buttons">
-        <button class="btn" id="rock" onclick="computerSelect(); playRound('Rock');">Rock</button>
-        <button class="btn" id="paper" onclick="computerSelect(); playRound('Paper');">Paper</button>
-        <button class="btn" id="scissors" onclick="computerSelect(); playRound('Scissors');">Scissors</button>
-    </div>
-    <div id="results">
-        <!--JS to print results here-->
-    </div>
+    <!--<div class="full-page-area">
+        <div class="form-area">
+            <div id="logo-area">
+                <img id="logo" src="via.placeholdit.com/468x60" />
+            </div>
+            <div id="description-area">
+                <h2 class="description-header">How it Works</h2>
+                <p class="description">1. Add your group member's names and the <strong>total</strong> amount they paid.</p>
+                <p class="description">2. Click "Calculate Split"!</p>
+            </div>
+            <div id="add-person-div">
+                <input type="button" id="btn-add-person" class="btn" value="Add Person" onclick="addPerson()">
+            </div>
+            <div id="person-0-div" class="person-div">
+                <input type="text" id="name-0" placeholder="Name 1" class="name">
+                <input type="number" id="amount-0" placeholder="Amount 1" class="amount">
+            </div>
+            <div id="person-1-div" class="person-div">
+                <input type="text" id="name-1" placeholder="Name 2" class="name">
+                <input type="number" id="amount-1" placeholder="Amount 2" class="amount">
+            </div>
+            <div id="script-added-inputs-div">
+                JS will add inputs here 
+            </div>
+            <div id="calculate-split-div">
+                <input type="button" id="btn-calculate-split" class="btn" value="Calculate Split" onclick="getAverage(); buildSortedPeopleArray(); calculateSplit(); changeCalcButton();";>
+            </div>
+            <div id="clear-div">
+                <a href="#" id="clear" onclick="clearAll(); return false;">Clear All</a>
+            </div>
+            <div id="results-area">
+                <p id="result-heading">Results:</p>
+                JS will add results here
+            </div>
+        </div>
+    </div>-->
+    <div class="container">
+        <div class="row">
+          <div class="col-sm outer">
+          </div>
+          <div class="col-sm" id="main-div">
+            <div id="start-over-area">
+                <a href="#" id="start-over" onclick="refresh()">Start Over</a>
+            </div>
+            <div id="buttons">
+                <button class="btn" id="rock" onclick="computerSelect(); playRound('Rock');">Rock</button>
+                <button class="btn" id="paper" onclick="computerSelect(); playRound('Paper');">Paper</button>
+                <button class="btn" id="scissors" onclick="computerSelect(); playRound('Scissors');">Scissors</button>
+            </div>
+            <div id="results">
+                <!--JS to print results here-->
+            </div>
+          </div>
+          <div class="col-sm outer">
+          </div>
+        </div>
+      </div>
 
 
-
+    
 
 <script type="text/javascript" src = "scripts.js"></script>
 </body>

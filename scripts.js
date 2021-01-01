@@ -1,4 +1,9 @@
-function refresh() {
+let games = 1; //start at 1 and go to 11 for 10 games
+let humanScore = 0;
+let computerScore = 0;
+let ties = 0;
+
+function refresh() { //simple clear all function
     location.reload();
 }
 
@@ -13,11 +18,6 @@ function computerSelect() {
         computerSelection = "Scissors";
     }
 }
-
-let games = 1;
-let humanScore = 0;
-let computerScore = 0;
-let ties = 0;
 
 function playRound(humanSelection) {
     console.log(games);
