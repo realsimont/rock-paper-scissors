@@ -7,19 +7,19 @@ function refresh() { //simple clear all function
     location.reload();
 }
 
-let computerSelection;
-function computerSelect() {
-    random = Math.floor(Math.random() * 3);
-    if (random === 0) {
-        computerSelection = "Rock";
-    } else if (random === 1) {
-        computerSelection = "Paper";
-    } else if (random === 2) {
-        computerSelection = "Scissors";
-    }
-}
-
 function playRound(humanSelection) {
+    let computerSelection;
+    function computerSelect() {
+        random = Math.floor(Math.random() * 3);
+        if (random === 0) {
+            computerSelection = "Rock";
+        } else if (random === 1) {
+            computerSelection = "Paper";
+        } else if (random === 2) {
+            computerSelection = "Scissors";
+        }
+    }
+    computerSelect();
     console.log(games);
     let humanWinOutcome = `Game ${games}: You played ${humanSelection}, Computer played ${computerSelection} - you win!`;
     let humanLoseOutcome = `Game ${games}: You played ${humanSelection}, Computer played ${computerSelection} - you lose!`;
