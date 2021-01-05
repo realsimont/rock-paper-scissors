@@ -20,6 +20,15 @@
     flex-grow: 4;
 }
 
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    width: 33%;
+}
+
 .btn:hover {
     background:#0688fa;
     background-color:#0688fa;
