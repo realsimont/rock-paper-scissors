@@ -1,4 +1,6 @@
 .btn {
+    width: 33%;
+    margin: 20px;
     box-shadow:inset 0px -3px 7px 0px #29bbff;
     background:#2dabf9;
     border-radius:10px;
@@ -22,12 +24,9 @@
 
 #buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-.btn {
-    width: 33%;
-}
 
 .btn:hover {
     background:#0688fa;
